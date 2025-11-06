@@ -30,6 +30,7 @@ const DiscordProfile = () => {
       setProfile({
         name: data.name,
         avatar: data.avatar,
+        moldura: data.moldura
       });
 
       setLoading(false);
@@ -52,11 +53,15 @@ const DiscordProfile = () => {
 
   return (
     <div className="flex flex-col items-center mt-10">
-      <img
-        src={profile.avatar}
-        alt="Avatar do Discord"
-        className="w-24 h-24 rounded-full border-2 border-black shadow-2xs"
+      <img 
+        src={profile.moldura}
+        className="w-[100px] h-[100px] rounded-full absolute"
       />
+        <img
+          src={profile.avatar}
+          alt="Avatar do Discord"
+          className="w-24 h-24 rounded-full shadow-2xs"
+        />
       <h2 className="text-xl mt-1 text-black font-semibold">{profile.name}</h2>
 
       <div className="mt-1 w-full">

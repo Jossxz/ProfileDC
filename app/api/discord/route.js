@@ -30,14 +30,19 @@ export async function GET() {
 
     const data = await response.json();
 
-    // Retornar apenas nome e avatar
+    // Retornar apenas nome, avatar e moldura
     const avatarUrl = data.avatar
       ? `https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}.png`
       : `https://cdn.discordapp.com/embed/avatars/${parseInt(data.discriminator || 0) % 5}.png`;
 
+    const molduraUrl = data.avatar_decoration_data
+    ? `https://cdn.discordapp.com/avatar-decoration-presets/${data.avatar_decoration_data.asset}.png`
+    : null; // ou uma imagem padrão, se quiser
+
     const result = {
       name: data.global_name || data.username,
       avatar: avatarUrl,
+      moldura: molduraUrl
     };
 
     return NextResponse.json(result);
