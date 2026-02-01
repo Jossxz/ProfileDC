@@ -52,17 +52,18 @@ const DiscordProfile = () => {
     return <p className="text-white">Não foi possível carregar o perfil.</p>;
 
   return (
-    <div className="flex flex-col items-center mt-10">
+    <div className="flex flex-col justify-center items-center ">
       <img 
         src={profile.moldura}
-        className="w-[100px] h-[100px] rounded-full absolute"
+        className="w-28.5 h-28.5 mb-18.5 absolute object-cover" 
+        alt="moldura"
       />
         <img
           src={profile.avatar}
           alt="Avatar do Discord"
           className="w-24 h-24 rounded-full shadow-2xs"
         />
-      <h2 className="text-xl mt-1 text-black font-semibold">{profile.name}</h2>
+      <h2 className="text-xl text-black font-semibold">{profile.name}</h2>
 
       <div className="mt-1 w-full">
         <hr className="border border-black/50 mb-2" />
