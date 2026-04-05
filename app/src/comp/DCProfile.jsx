@@ -52,7 +52,7 @@ const DiscordProfile = () => {
     return <p className="text-white">Não foi possível carregar o perfil.</p>;
 
   return (
-    <div className="flex flex-col justify-center items-center ">
+    <div className="flex flex-col justify-center items-center bg-white/20 backdrop-blur-md border border-white/20 rounded-xl p-8 shadow-2xl">
       <img 
         src={profile.moldura}
         className="w-28.5 h-28.5 mb-18.5 absolute object-cover" 
